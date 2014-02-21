@@ -24,11 +24,18 @@ public class AddTestNGTest {
     private static  AddService service;
 
      
-    @Test
+    @Test//Integer test
     public void testAdd() throws Exception{
     int total = service.add(3,5);
     Assert.assertEquals(total, 8, "Sum Of The Two Numbers is: "+total);
     }
+    
+    @Test //Floating point assertion test
+    public void testSubtract() throws Exception{
+    float total =service.subtract(5, 3);
+    Assert.assertEquals(total, 2, "The difference of the two numbers is: "+total);
+    }
+    
 
     @BeforeClass
     public static void setUpClass() throws Exception 
