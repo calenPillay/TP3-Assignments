@@ -32,10 +32,49 @@ public class AddTestNGTest {
     
     @Test //Floating point assertion test
     public void testSubtract() throws Exception{
-    float total =service.subtract(5, 3);
-    Assert.assertEquals(total, 2, "The difference of the two numbers is: "+total);
+    float total =service.subtract(5,3);
+    Assert.assertEquals(total, 2,2, "The difference of the two numbers is:"+total);
     }
     
+    @Test//Asserting object equality test
+    public void testDivide() throws Exception{
+        int total = service.divide(9, 3);
+        Assert.assertEquals(total, 3,"The two numbers divided is"+total);
+    }
+    
+    @Test //Asserting comparison test
+    public void testCompare() throws Exception{
+        service.compare("Apples", "Oranges");
+        String g="Donkey";
+        Assert.assertNotSame(g, service);
+        Assert.assertSame(service, service);
+    }
+    
+    @Test //Asserting the true test
+    public void testTrue()throws Exception{
+        service.trueTest(true);
+        boolean a=true;
+        Assert.assertTrue(a);
+    }
+    
+    @Test //Asserting false test
+    public void testFalse()throws Exception{
+        service.falseTest(false);
+        boolean a=false;
+        Assert.assertFalse(a);
+    }
+    
+    @Test //Checking if an answer is NULL
+    public void testNullCheck() throws Exception{
+       String a=  service.checkNull(null);
+        Assert.assertNull(a);
+    }
+    
+    @Test //Checking if an answer is not null
+    public void testNotNullCheck() throws Exception{
+        String a=service.checkNotNull("Dog");
+        Assert.assertNotNull(a);
+    }
 
     @BeforeClass
     public static void setUpClass() throws Exception 
